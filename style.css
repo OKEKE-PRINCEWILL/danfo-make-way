@@ -11,3 +11,14 @@
 
 
 .level:disabled{opacity:.5;cursor:not-allowed}.level:disabled .star{font-size:10px;filter:grayscale(1)}
+
+/* Lagos street: green direction signs, asphalt, and yellow-and-black kerbs. */
+.road-wrap{background:#c8baa0;border:1px solid #ad9e83;padding:15px 29px 12px 22px;box-shadow:inset 0 0 0 5px #e0d7c4,0 5px 15px #173e310b}
+.road-top{min-height:38px;margin-bottom:12px;color:#4f5d44;font-size:8px}
+.road-sign{background:#24623e;color:#fff8df;border:2px solid #f5edd4;border-radius:4px;padding:6px 12px;font-size:10px;letter-spacing:1.5px;box-shadow:0 2px 0 #35543a66;display:flex;align-items:center;gap:9px}
+.road-sign-arrow{font-size:19px;line-height:1}.road-authority{text-align:right;font-size:7px;line-height:1.8;letter-spacing:1.1px}
+.board{border:9px solid transparent;background-color:#4a514c;background-image:linear-gradient(to right,#ebe4cc22 1px,transparent 1px),linear-gradient(to bottom,#ebe4cc22 1px,transparent 1px),linear-gradient(135deg,#ffffff05 25%,transparent 25%,transparent 75%,#00000006 75%);background-size:calc(100% / 6) calc(100% / 6),calc(100% / 6) calc(100% / 6),7px 7px;background-clip:padding-box;box-shadow:inset 0 0 0 2px #f8e5a966,inset 0 5px 12px #15261b55}
+.board-row{border-radius:7px;background:repeating-conic-gradient(#efbd32 0% 25%,#26322a 0% 50%) 0 / 46px 46px;box-shadow:0 3px 0 #695d4c66}
+.board:after{right:-10px;width:12px;background:repeating-linear-gradient(to bottom,#f5efdb 0 5px,#4a514c 5px 11px);border-left:2px solid #f5efdb;border-right:2px solid #f5efdb}
+.exit{left:calc(100% + 1px);color:#24452f;background:#e2d6b7;border-radius:0 4px 4px 0;padding:2px}.exit span{font-weight:800}.road-bottom{color:#4c5944;min-height:22px;font-size:7px}.road-bottom>span:first-child,.road-bottom>span:last-child{color:#93762b}
+@media(max-width:650px){.road-sign{font-size:8px;padding:4px 8px}.road-authority{font-size:6px}.road-bottom{font-size:5px}.road-wrap{padding-left:17px;padding-right:25px}}

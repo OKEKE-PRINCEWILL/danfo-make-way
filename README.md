@@ -6,7 +6,7 @@ A desktop Lagos traffic puzzle built for start.ng. Slide vehicles along their la
 
 Serve this directory with any static HTTP server, or open index.html. No install or build is required. Drag vehicles, or Tab to one and use arrow keys. Z undoes, R restarts, H gives a shortest-route hint. Each uninterrupted slide counts as one move.
 
-Progress stays in localStorage. Each stop earns up to 1,000 points, minus 35 for each move beyond the shortest route and 100 per hint, with a 100-point minimum. Your best stop scores add up to a journey score. Online profiles and leaderboards use the start.ng connect bridge and work only on a live *.start.ng domain. Guests can play every level.
+Progress stays in localStorage. Each stop earns up to 1,000 points, minus 35 for each move beyond the shortest route, with a 100-point minimum. Your best stop scores add up to a journey score. Online profiles and leaderboards use the start.ng connect bridge and work only on a live *.start.ng domain. Guests can play every level.
 
 ## Files
 
@@ -22,3 +22,5 @@ Publishing follows https://start.ng/docs.md: public GitHub repository, POST /gam
 The revised route uses 3, 5, 7, 9, 11, 13, 15, 17, 19 and 21 minimum moves. See TRAFFIC-SOURCES.md for the traffic-inspired order and its limits. Revised puzzles use separate local saved progress (danfo-v2).
 
 Levels unlock sequentially: finish every earlier stop to enter the next. Completed stops remain replayable, and unlocks persist on this browser.
+
+Hint economy: two hints for a new player; each hint consumes one credit without reducing points. The first completion of each level awards one credit. Restarts and replays do not refill credits; the balance is saved locally.
