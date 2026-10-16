@@ -22,3 +22,31 @@
 .board:after{right:-10px;width:12px;background:repeating-linear-gradient(to bottom,#f5efdb 0 5px,#4a514c 5px 11px);border-left:2px solid #f5efdb;border-right:2px solid #f5efdb}
 .exit{left:calc(100% + 1px);color:#24452f;background:#e2d6b7;border-radius:0 4px 4px 0;padding:2px}.exit span{font-weight:800}.road-bottom{color:#4c5944;min-height:22px;font-size:7px}.road-bottom>span:first-child,.road-bottom>span:last-child{color:#93762b}
 @media(max-width:650px){.road-sign{font-size:8px;padding:4px 8px}.road-authority{font-size:6px}.road-bottom{font-size:5px}.road-wrap{padding-left:17px;padding-right:25px}}
+
+/* Detailed overhead vehicles. Parts share an axis so horizontal and vertical
+   cars have the same proportions, with their fronts toward right / bottom. */
+.vehicle .car-body{display:block;isolation:isolate;padding:0;border:0;border-radius:19% 24% 24% 19% / 29% 35% 35% 29%;background:linear-gradient(180deg,#ffffff6b 0%,transparent 15%,#ffffff12 45%,#00000024 100%),var(--car);box-shadow:0 5px 0 #14201c66,0 9px 9px #07150e55,inset 0 0 0 1px #ffffff66,inset 0 -4px 0 #00000020;overflow:visible}
+.vehicle.v .car-body{padding:0;border-radius:29% 29% 35% 35% / 19% 19% 24% 24%;background:linear-gradient(90deg,#ffffff6b 0%,transparent 15%,#ffffff12 45%,#00000024 100%),var(--car)}
+.vehicle .car-body:before,.vehicle .car-body:after{display:none}
+.car-body>span{position:absolute;display:block;pointer-events:none}
+.car-body .roof{left:32%;top:19%;width:28%;height:62%;border-radius:19%;background:linear-gradient(155deg,#ffffff44,#ffffff12 60%,#00000015),var(--car);border:1px solid #ffffff55;box-shadow:inset 0 -2px 2px #00000019;z-index:3}
+.car-body .windscreen{left:61%;top:14%;width:16%;height:72%;border-radius:12% 45% 45% 12%;background:linear-gradient(155deg,#bfe0da 0%,#749c9b 19%,#1f4247 22%,#102e36 57%,#395e63 59%,#16353e 100%);border:2px solid #263e3f;box-shadow:0 0 0 1px #ffffff55;z-index:3}
+.car-body .rear-window{left:18%;top:17%;width:12%;height:66%;border-radius:40% 10% 10% 40%;background:linear-gradient(155deg,#82a7a6,#163b44 40%,#244b53 70%,#93b7af);border:2px solid #294343;z-index:3}
+.car-body .bonnet{left:79%;top:23%;width:15%;height:54%;border-radius:12% 40% 40% 12%;border-top:1px solid #ffffff55;border-bottom:1px solid #00000022;background:linear-gradient(180deg,#ffffff18,transparent);z-index:2}
+.car-body .tyre{background:linear-gradient(180deg,#101a18,#35433e 42%,#101a18);border:1px solid #0b1610;border-radius:3px;box-shadow:0 1px 1px #0008;z-index:-1;width:14%;height:14%;left:19%;top:-5%}
+.car-body .tyre-fr{left:72%}.car-body .tyre-rl{top:91%}.car-body .tyre-rr{left:72%;top:91%}
+.car-body .mirror{width:7%;height:12%;left:60%;top:-4%;border-radius:3px;background:var(--car);border:1px solid #243a3288;box-shadow:1px 1px 1px #0005;z-index:4}.car-body .mirror-right{top:92%}
+.car-body .headlight{left:94%;top:17%;width:4%;height:20%;border-radius:2px;background:#fff3c8;box-shadow:0 0 3px #ffe8a588;z-index:4}.car-body .light-right{top:63%}
+.car-body .taillight{left:2%;top:19%;width:4%;height:17%;border-radius:2px;background:#eb5744;border-bottom:1px solid #9f2d27;z-index:4}.car-body .tail-right{top:64%}
+.car-body .bumper{left:97%;top:34%;width:2%;height:32%;border-radius:2px;background:#b8c6bc;z-index:4}.car-body .rear-bumper{left:0}
+.vehicle.v .roof{left:19%;top:32%;width:62%;height:28%}.vehicle.v .windscreen{left:14%;top:61%;width:72%;height:16%;border-radius:12% 12% 45% 45%;background:linear-gradient(130deg,#9dc1ba,#173b45 35%,#16343c 65%,#507a7b 67%,#1b3a42)}
+.vehicle.v .rear-window{left:17%;top:18%;width:66%;height:12%;border-radius:40% 40% 10% 10%}.vehicle.v .bonnet{left:23%;top:79%;width:54%;height:15%;border-radius:12% 12% 40% 40%;border-top:0;border-left:1px solid #ffffff55;border-right:1px solid #00000022}
+.vehicle.v .tyre{left:-5%;top:19%;width:14%;height:14%}.vehicle.v .tyre-fr{left:91%}.vehicle.v .tyre-rl{top:72%}.vehicle.v .tyre-rr{left:91%;top:72%}
+.vehicle.v .mirror{left:-4%;top:60%;width:12%;height:7%}.vehicle.v .mirror-right{left:92%;top:60%}
+.vehicle.v .headlight{left:17%;top:94%;width:20%;height:4%}.vehicle.v .light-right{left:63%;top:94%}.vehicle.v .taillight{left:19%;top:2%;width:17%;height:4%}.vehicle.v .tail-right{left:64%;top:2%}
+.vehicle.v .bumper{left:34%;top:97%;width:32%;height:2%}.vehicle.v .rear-bumper{top:0}
+.vehicle .long-body{border-radius:9% 15% 15% 9% / 23% 30% 30% 23%}.vehicle.v .long-body{border-radius:23% 23% 30% 30% / 9% 9% 15% 15%}.long-body .roof{background:repeating-linear-gradient(90deg,transparent 0 23%,#ffffff22 24% 26%,transparent 27% 50%),var(--car)}.v .long-body .roof{background:repeating-linear-gradient(0deg,transparent 0 23%,#ffffff22 24% 26%,transparent 27% 50%),var(--car)}
+.danfo .car-body{border-radius:10% 16% 16% 10% / 16% 22% 22% 16%;background:linear-gradient(180deg,#ffe382 0%,#f3b82c 19%,#303b28 20% 25%,#edb328 26% 74%,#303b28 75% 80%,#d9971d 81% 100%);box-shadow:0 5px 0 #16231b88,0 9px 9px #07150e66,inset 0 0 0 1px #fff0a7,inset 0 -3px 0 #9c6a2288}
+.danfo .car-body .roof{left:22%;top:26%;width:40%;height:48%;border-radius:9%;background:linear-gradient(180deg,#ffda67,#edb02a);border:1px solid #ffe38a;box-shadow:0 2px 2px #6a481c55;display:grid;place-items:center}
+.danfo .car-body .danfo-lettering{position:static;font-size:clamp(6px,.65vw,10px);letter-spacing:.7px;color:#21382d;font-weight:800}
+.danfo .windscreen{left:67%;top:12%;width:15%;height:76%;border-radius:12% 22% 22% 12%;border-width:2px}.danfo .rear-window{left:7%;top:16%;width:12%;height:68%;border-radius:2px}.danfo .bonnet{left:84%;width:10%;top:25%;height:50%;border-radius:2px}.danfo .mirror{left:67%;background:#263d34;width:8%}.danfo .tyre{left:13%;width:12%}.danfo .tyre-fr,.danfo .tyre-rr{left:77%}.danfo .bumper{background:#37453b;width:3%;left:97%}.danfo .rear-bumper{left:0}.danfo .taillight{background:linear-gradient(#f78a2c 50%,#d84028 50%)}
