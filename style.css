@@ -9,3 +9,5 @@
 
 .traffic-context{border-top:1px solid var(--line);padding-top:16px;margin-top:20px}.traffic-context h3{font-size:12px;margin:8px 0}.traffic-context p{font-size:11px;line-height:1.7;color:var(--muted)}.traffic-context small{font-size:9px;line-height:1.6;color:var(--muted);display:block}
 
+
+.level:disabled{opacity:.5;cursor:not-allowed}.level:disabled .star{font-size:10px;filter:grayscale(1)}

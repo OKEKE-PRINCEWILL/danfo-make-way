@@ -20,3 +20,5 @@ Publishing follows https://start.ng/docs.md: public GitHub repository, POST /gam
 
 
 The revised route uses 3, 5, 7, 9, 11, 13, 15, 17, 19 and 21 minimum moves. See TRAFFIC-SOURCES.md for the traffic-inspired order and its limits. Revised puzzles use separate local saved progress (danfo-v2).
+
+Levels unlock sequentially: finish every earlier stop to enter the next. Completed stops remain replayable, and unlocks persist on this browser.
