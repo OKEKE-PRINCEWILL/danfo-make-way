@@ -11,10 +11,11 @@
  function slide(cars,m){return cars.map((c,i)=>i===m.i?{...c,x:c.x+(c.o==='h'?m.d:0),y:c.y+(c.o==='v'?m.d:0)}:{...c});}
  function solve(cars,limit=100000){
   const key=s=>s.map(c=>c.o==='h'?c.x:c.y).join('');
-  const queue=[{s:cars,p:-1,m:null}],seen=new Set([key(cars)]);
+  const initial=key(cars),queue=[{k:initial,p:-1,m:null}],seen=new Set([initial]);
   for(let h=0;h<queue.length&&h<limit;h++){
-   const q=queue[h];if(q.s[0].x===4){const path=[];let j=h;while(queue[j].p!==-1){path.push(queue[j].m);j=queue[j].p;}return path.reverse();}
-   for(const m of moves(q.s)){const s=slide(q.s,m),k=key(s);if(!seen.has(k)){seen.add(k);queue.push({s,p:h,m});}}
+   const q=queue[h];if(q.k[0]==='4'){const path=[];let j=h;while(queue[j].p!==-1){path.push(queue[j].m);j=queue[j].p;}return path.reverse();}
+   const state=cars.map((c,i)=>({...c,[c.o==='h'?'x':'y']:Number(q.k[i])}));
+   for(const m of moves(state)){const position=Number(q.k[m.i])+m.d,k=q.k.slice(0,m.i)+position+q.k.slice(m.i+1);if(!seen.has(k)){seen.add(k);queue.push({k,p:h,m});}}
   }return null;
  }
  root.Puzzle={moves,slide,solve};

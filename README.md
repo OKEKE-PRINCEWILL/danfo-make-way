@@ -1,6 +1,6 @@
 # Danfo, Make Way!
 
-A desktop Lagos traffic puzzle built for start.ng. Slide vehicles along their lanes to free the yellow danfo. Ten solvable stops take you from Ojuelegba to Victoria Island.
+A desktop Lagos traffic puzzle built for start.ng. Slide vehicles along their lanes to free the yellow danfo. Ten solvable stops take you from off-peak Ikoyi to Apapa port gridlock.
 
 ## Play
 
@@ -18,3 +18,5 @@ Progress stays in localStorage. Each stop earns up to 1,000 points, minus 35 for
 
 Publishing follows https://start.ng/docs.md: public GitHub repository, POST /games/check, then POST /games/publish and the owner's one-time approval.
 
+
+The revised route uses 3, 5, 7, 9, 11, 13, 15, 17, 19 and 21 minimum moves. See TRAFFIC-SOURCES.md for the traffic-inspired order and its limits. Revised puzzles use separate local saved progress (danfo-v2).

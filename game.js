@@ -1,10 +1,10 @@
 const $=id=>document.getElementById(id);
-const stops=['Ojuelegba','Yaba','Surulere','Ikeja','Maryland','Anthony','Gbagada','Third Mainland','Ikoyi','Victoria Island'];
+const stops=ROUTES.map(route=>route.name);
 const palette=['#efb82d','#e77558','#568e8c','#e5dec3','#7283a3','#9caa70','#c890a2','#c3aa7f','#6e9bba','#bf7655','#879b7f','#d3c68e','#a397ae','#a1b8a1'];
-let progress={};try{progress=JSON.parse(localStorage.getItem('danfo-v1')||'{}')||{};}catch{}
+let progress={};try{progress=JSON.parse(localStorage.getItem('danfo-v2')||'{}')||{};}catch{}
 let current=0,cars=[],history=[],moveCount=0,hints=0,won=false,player=null,signedIn=false,framePromise;
-const persist=()=>{try{localStorage.setItem('danfo-v1',JSON.stringify(progress));}catch{}};
-function load(i){current=i;cars=structuredClone(LEVELS[i].cars);history=[];moveCount=0;hints=0;won=false;$('win').hidden=true;$('level-tag').textContent=`STOP ${String(i+1).padStart(2,'0')} · ${i<3?'WARM-UP':i<7?'RUSH HOUR':'PRO DRIVER'}`;$('level-name').textContent=stops[i];$('par').textContent=`Shortest route: ${LEVELS[i].par} moves`;$('status').textContent='Drag a vehicle along its lane. Free the yellow danfo →';render();}
+const persist=()=>{try{localStorage.setItem('danfo-v2',JSON.stringify(progress));}catch{}};
+function load(i){current=i;cars=structuredClone(LEVELS[i].cars);history=[];moveCount=0;hints=0;won=false;$('win').hidden=true;$('level-tag').textContent=`STOP ${String(i+1).padStart(2,'0')} · ${ROUTES[i].label}`;$('level-name').textContent=stops[i];$('traffic-scene').textContent=ROUTES[i].scene;$('traffic-note').textContent=ROUTES[i].note;$('par').textContent=`Shortest route: ${LEVELS[i].par} moves`;$('status').textContent='Drag a vehicle along its lane. Free the yellow danfo →';render();}
 function render(){
  $('moves').textContent=String(moveCount).padStart(2,'0');$('best').textContent=progress[current]?.moves??'—';$('undo').disabled=!history.length||won;$('hint').disabled=won;$('progress').textContent=`${Object.keys(progress).length} / 10`;
  $('levels').replaceChildren(...stops.map((name,i)=>{const b=document.createElement('button');b.className=`level ${current===i?'active':''} ${progress[i]?'done':''}`;b.setAttribute('aria-current',current===i?'step':'false');b.innerHTML=`<span class="number">${String(i+1).padStart(2,'0')}</span><span class="stop">${name}</span><span class="star">${progress[i]?'★':'·'}</span>`;b.onclick=()=>load(i);return b;}));
@@ -32,3 +32,4 @@ $('board-toggle').onclick=async()=>{$('leaderboard').showModal();$('scores').rep
 if(new URLSearchParams(location.hash.slice(1)).has('startng_session'))historyClean();
 function historyClean(){window.history.replaceState(null,'',location.pathname+location.search);}
 load(0);refreshPlayer();
+
