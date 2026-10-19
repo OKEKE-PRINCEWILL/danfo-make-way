@@ -70,3 +70,12 @@
 .bus-callout{position:absolute;z-index:12;transform:translate(-50%,-110%);padding:8px 11px;white-space:nowrap;background:#fff4cc;border:2px solid #203d2d;border-radius:12px 12px 12px 3px;color:#203d2d;box-shadow:0 3px 0 #1b2d2855;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;pointer-events:none}
 .bus-callout:after{content:'';position:absolute;bottom:-7px;left:21px;width:10px;height:10px;background:#fff4cc;border-bottom:2px solid #203d2d;border-right:2px solid #203d2d;transform:rotate(45deg)}
 .voice-toggle{display:block;margin:0 auto 10px;background:none;border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:10px;color:var(--muted)}
+
+/* The same start.ng face leans through the driver's side window during a call. */
+.danfo .car-body .driver-seat{overflow:visible}
+.driver-seat .driver-face{border-radius:3px;transform-origin:50% 85%;transition:transform .22s ease,box-shadow .22s ease;position:relative;z-index:2}
+.danfo.driver-out{z-index:10}
+.danfo.driver-out .driver-face{transform:translateY(88%) rotate(-16deg) scale(1.65);border-radius:45% 45% 35% 35%;box-shadow:0 2px 0 #173e31,0 4px 5px #0007;outline:1px solid #f9e9a1}
+.driver-seat:after{content:'';position:absolute;left:22%;top:80%;width:55%;height:75%;background:#e8b238;border:1px solid #a37a23;border-radius:35%;transform:scaleY(0);transform-origin:top;transition:transform .2s ease;z-index:1}
+.driver-out .driver-seat:after{transform:scaleY(1)}
+@media(prefers-reduced-motion:reduce){.driver-seat .driver-face,.driver-seat:after{transition:none}}
