@@ -64,3 +64,9 @@
 .danfo .car-body .bus-grille{left:95%;top:30%;width:4%;height:40%;border-radius:1px;background:repeating-linear-gradient(0deg,#1e3026 0 2px,#6c7861 2px 3px);z-index:5}.danfo .car-body .bus-plate{left:98%;top:39%;width:4%;height:22%;background:#e8edd9;border:1px solid #495d3c;font-size:3px;writing-mode:vertical-rl;line-height:1;color:#27513b;z-index:7}
 .danfo .car-body .front-bumper{left:100%;top:8%;width:3%;height:84%;border-radius:1px;background:linear-gradient(90deg,#6e7860,#25382b);z-index:6}.danfo .car-body .rear-bumper{left:-3%;top:10%;width:3%;height:80%;border-radius:1px}
 .danfo .car-body .tyre{left:13%;top:-7%;width:12%;height:16%;border-radius:2px}.danfo .car-body .tyre-fr{left:78%}.danfo .car-body .tyre-rl{top:91%}.danfo .car-body .tyre-rr{left:78%;top:91%}
+
+.danfo .car-body .driver-seat{left:77%;top:51%;width:17%;height:37%;z-index:7;display:grid;place-items:center;border:1px solid #a5bd9a;border-radius:3px;background:#244436;box-shadow:0 0 0 1px #142b25;overflow:hidden}
+.driver-seat .driver-face{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.bus-callout{position:absolute;z-index:12;transform:translate(-50%,-110%);padding:8px 11px;white-space:nowrap;background:#fff4cc;border:2px solid #203d2d;border-radius:12px 12px 12px 3px;color:#203d2d;box-shadow:0 3px 0 #1b2d2855;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;pointer-events:none}
+.bus-callout:after{content:'';position:absolute;bottom:-7px;left:21px;width:10px;height:10px;background:#fff4cc;border-bottom:2px solid #203d2d;border-right:2px solid #203d2d;transform:rotate(45deg)}
+.voice-toggle{display:block;margin:0 auto 10px;background:none;border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:10px;color:var(--muted)}

@@ -24,3 +24,5 @@ The revised route uses 3, 5, 7, 9, 11, 13, 15, 17, 19 and 21 minimum moves. See 
 Levels unlock sequentially: finish every earlier stop to enter the next. Completed stops remain replayable, and unlocks persist on this browser.
 
 Hint economy: two hints for a new player; each hint consumes one credit without reducing points. The first completion of each level awards one credit. Restarts and replays do not refill credits; the balance is saved locally.
+
+The start.ng player face appears in the danfo driver window (local preview uses a generic driver). Successful danfo slides show “Comot for road!” and speak it using available browser speech synthesis. The voice can be muted; speech availability and accent depend on the browser.
