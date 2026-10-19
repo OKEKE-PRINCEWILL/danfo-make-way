@@ -25,4 +25,4 @@ Levels unlock sequentially: finish every earlier stop to enter the next. Complet
 
 Hint economy: two hints for a new player; each hint consumes one credit without reducing points. The first completion of each level awards one credit. Restarts and replays do not refill credits; the balance is saved locally.
 
-The start.ng player face appears in the danfo driver window (local preview uses a generic driver). Successful danfo slides show “Comot for road!” and speak it using available browser speech synthesis. The voice can be muted; speech availability and accent depend on the browser.
+The start.ng player face appears in the danfo driver window (local preview uses a generic driver). Successful danfo slides show “Comot for road!” and play the supplied owner voice recording. The voice can be muted. The original M4A recording is served as driver-voice.mp4 because M4A uses the MP4 container and start.ng serves .mp4 assets.
