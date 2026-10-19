@@ -79,3 +79,10 @@
 .driver-seat:after{content:'';position:absolute;left:22%;top:80%;width:55%;height:75%;background:#e8b238;border:1px solid #a37a23;border-radius:35%;transform:scaleY(0);transform-origin:top;transition:transform .2s ease;z-index:1}
 .driver-out .driver-seat:after{transform:scaleY(1)}
 @media(prefers-reduced-motion:reduce){.driver-seat .driver-face,.driver-seat:after{transition:none}}
+
+.camera-controls{display:flex;align-items:center;gap:5px;margin:0 0 9px}.scene-badge{font-size:7px;letter-spacing:1px;color:#5c674e;margin-right:auto;font-weight:700}.camera-controls button{background:#ded6c2;border:1px solid #a89e84;border-radius:5px;padding:5px 9px;font-size:10px}.camera-controls button[aria-pressed=true]{background:#244d39;color:#fff4cc;border-color:#244d39}
+#scene3d{display:none;width:100%;aspect-ratio:1/1.04;border-radius:9px;overflow:hidden}#scene3d.ready{display:block}#scene3d canvas{display:block;width:100%;height:100%;cursor:grab}
+.board-row.has-3d{background:none;box-shadow:none}.has-3d>.exit{display:none}.has-3d #board{position:absolute;left:0;top:0;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);border:0;background:#f6f5ed;z-index:15}
+.has-3d #board:focus-within{width:100%;height:auto;max-height:180px;overflow:auto;clip-path:none;border:2px solid var(--ink);border-radius:8px;padding:8px;aspect-ratio:auto;box-shadow:0 6px 14px #0003;display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.has-3d #board:focus-within .vehicle{position:static!important;width:auto!important;height:auto!important;min-height:36px;border:1px solid #b0bba7;border-radius:4px;background:#e1e8d7;padding:6px;font-size:10px}.has-3d #board:focus-within .vehicle:after{content:attr(aria-label);font-size:9px;line-height:1.4}.has-3d #board:focus-within .car-body{display:none}.has-3d #board:after{display:none}
+.has-3d .bus-callout{font-size:12px}.render-message{font-size:11px;line-height:1.6;color:#6c4828;background:#fff0c1;padding:10px;border-radius:6px}
