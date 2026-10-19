@@ -12,6 +12,8 @@ function sphere(parent,r,x,y,z,color){const m=new THREE.Mesh(new THREE.SphereGeo
 export function makeVehicle(car,index,color,style={}){
  const g=new THREE.Group(),bus=index===0,long=car.n===3,L=car.n-.2,glass='#234b58',dark='#24352f';
  g.userData.index=index;g.userData.car=car;
+ // Keep lane occupancy unchanged while giving the modeled body more clearance.
+ g.scale.set(.94,.8,.74);
  box(g,L,.16,.77,0,.22,0,dark,.1);
  const body=box(g,L,.32,.74,0,.42,0,bus?'#f1b92b':color,bus?.06:.15);g.userData.paint=body;
  if(bus){

@@ -6,7 +6,7 @@ try{
  const ray=new THREE.Raycaster(),pointer=new THREE.Vector2(),floor=new THREE.Plane(new THREE.Vector3(0,1,0),0),point=new THREE.Vector3();
  let snapshot=null,signature='',groups=[],drag=null,view='angle',faceUrl='',faceTexture=null,faceVersion=0,lastTime=performance.now(),hintIndex=-1;
  const loader=new THREE.TextureLoader();
- function resize(){const w=host.clientWidth,h=host.clientHeight,ratio=w/h;renderer.setSize(w,h,false);const half=5.25;camera.left=-half*ratio;camera.right=half*ratio;camera.top=half;camera.bottom=-half;if(view==='top')camera.position.set(0,16,.001);else camera.position.set(5.5,10,10);camera.lookAt(0,0,-.15);camera.updateProjectionMatrix();}
+ function resize(){const w=host.clientWidth,h=host.clientHeight,ratio=w/h;renderer.setSize(w,h,false);const half=5.25;camera.left=-half*ratio;camera.right=half*ratio;camera.top=half;camera.bottom=-half;if(view==='top')camera.position.set(0,16,.001);else camera.position.set(5.5,12.5,10);camera.lookAt(0,0,-.15);camera.updateProjectionMatrix();}
  new ResizeObserver(resize).observe(host);
  function clearModels(){for(const g of groups)g.traverse(m=>{if(m.geometry)m.geometry.dispose();if(m===g.userData.face)m.material.dispose();});models.clear();groups=[];}
  function applyFace(url){if(url===faceUrl)return;faceUrl=url;const version=++faceVersion;loader.load(url,t=>{if(version!==faceVersion){t.dispose();return;}t.colorSpace=THREE.SRGBColorSpace;faceTexture?.dispose();faceTexture=t;for(const g of groups)if(g.userData.face){g.userData.face.material.map=t;g.userData.face.material.needsUpdate=true;}},undefined,()=>{});}
