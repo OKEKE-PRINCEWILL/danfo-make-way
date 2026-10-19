@@ -38,7 +38,7 @@ export function makeVehicle(car,index,color,style={}){
   if(long)for(let k=0;k<3;k++)box(g,.02,.013,.42,-.5+k*.3,.926,0,'#ffffff');
  }
  for(const side of [-1,1]){
-  for(const axle of [-1,1]){const x=axle*(L/2-.3),wheel=cylinder(g,.18,.12,x,.22,side*.39,'#18251f');wheel.rotation.x=Math.PI/2;const hub=cylinder(g,.085,.125,x,.22,side*.395,'#879288');hub.rotation.x=Math.PI/2;}
+  for(const axle of [-1,1]){const x=axle*(L/2-.3),wheel=cylinder(g,.18,.12,x,.22,side*.39,'#18251f');wheel.rotation.x=Math.PI/2;wheel.userData.wheel=true;const hub=cylinder(g,.085,.125,x,.22,side*.395,'#879288');hub.rotation.x=Math.PI/2;hub.userData.wheel=true;}
   box(g,.13,.07,.1,L*.25,bus?.92:.72,side*.42,dark,.025);
   box(g,.04,bus?.1:.075,.13,L/2+.025,bus?.73:.48,side*.23,'#fff0b4',.018);
   box(g,.03,.08,.13,-L/2-.015,.45,side*.24,'#e45f47',.012);
@@ -59,7 +59,7 @@ export function createWorld(){
  const scene=new THREE.Scene();scene.background=new THREE.Color('#dbe8da');
  scene.add(new THREE.HemisphereLight('#fff4d8','#59775c',2.8));
  const sun=new THREE.DirectionalLight('#fff1cc',3.4);sun.position.set(-3,10,6);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-6;sun.shadow.camera.right=6;sun.shadow.camera.top=6;sun.shadow.camera.bottom=-6;sun.shadow.normalBias=.025;sun.shadow.bias=-.0002;scene.add(sun);
- box(scene,10,.25,9,0,-.5,0,'#aebf98',.25);
+ box(scene,13,.25,9,1.5,-.5,0,'#aebf98',.25);
  box(scene,6.65,.28,6.65,0,-.27,0,'#b5a887',.12);
  box(scene,6.05,.09,6.05,0,-.08,0,'#46514b',.04);
  // Paving and black-and-yellow kerbs; leave a real exit in row 3.
@@ -71,7 +71,7 @@ export function createWorld(){
   box(scene,.012,.006,.16,-3+i,-.03,-2.85+j*.5,'#8c9984');
   box(scene,.16,.006,.012,-2.85+j*.5,-.03,-3+i,'#8c9984');
  }
- box(scene,1.5,.09,.98,3.78,-.08,-.5,'#46514b');
+ box(scene,4.5,.09,1.25,5.25,-.08,-.5,'#46514b');for(let k=0;k<9;k++){box(scene,.3,.012,.025,3.2+k*.5,-.025,-1.04,'#f1d56a');box(scene,.3,.012,.025,3.2+k*.5,-.025,.04,'#f1d56a');}
  for(let i=0;i<6;i++)box(scene,.08,.012,.74,3.03+i*.11,-.025,-.5,'#f4eacb');
  const arrow=new THREE.Shape();arrow.moveTo(0,-.05);arrow.lineTo(.25,-.05);arrow.lineTo(.25,-.14);arrow.lineTo(.43,0);arrow.lineTo(.25,.14);arrow.lineTo(.25,.05);arrow.lineTo(0,.05);arrow.closePath();const ar=new THREE.Mesh(new THREE.ShapeGeometry(arrow),new THREE.MeshBasicMaterial({color:'#f4d455',side:THREE.DoubleSide}));ar.rotation.x=-Math.PI/2;ar.position.set(3.7,-.018,-.5);scene.add(ar);
  // Lagos-inspired roadside shops, palm trees and a distant bridge silhouette.
